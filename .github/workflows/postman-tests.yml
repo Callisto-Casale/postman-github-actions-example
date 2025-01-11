@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Navigate to Rust project
-        run: cd /rust-api-example
+        run: cd rust-api-example
 
       - name: Start Rust API
         run: cargo run
