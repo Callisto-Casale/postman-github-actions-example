@@ -1,0 +1,31 @@
+name: Run Postman API Tests
+
+# Triggers: voer uit bij push en pull request
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout de code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 2. Installeer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # 3. Installeer Newman (CLI voor Postman)
+      - name: Install Newman
+        run: npm install -g newman
+
+      # 4. Voer de Postman-collectie uit
+      - name: Run Postman Collection
+        run: newman run collection.json
