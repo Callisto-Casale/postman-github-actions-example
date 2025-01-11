@@ -16,10 +16,16 @@ jobs:
 
       - name: Start Rust API
         working-directory: rust-api-example
-        run: cargo run &
+        run: nohup cargo run > rust-api.log 2>&1 &
+
+      - name: Check Rust API Logs
+        run: cat rust-api-example/rust-api.log
 
       - name: Wait for API to be ready
-        run: sleep 30
+        run: sleep 60
+
+      - name: Verify API is running
+        run: netstat -an | grep 8080
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
