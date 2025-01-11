@@ -1,6 +1,5 @@
 name: Run Postman API Tests
 
-# Triggers: voer uit bij push en pull request
 on:
   push:
     branches:
@@ -12,28 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Navigate to Rust project
+        run: cd rust-api
+
+      - name: Start Rust API
+        run: cargo run &
+
+      - name: Wait for API to be ready
+        run: sleep 5
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
 
-
-      - name: Start Rust API
-        run: cargo run &
-
-
-      - name: Wait for API to be ready
-        run: sleep 5
-
-
       - name: Install Newman
         run: npm install -g newman
-
 
       - name: Run Postman Collection
         run: newman run collection.json
