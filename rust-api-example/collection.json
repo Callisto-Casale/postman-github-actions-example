@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Status request",
+			"name": "New Request",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -29,7 +29,7 @@
 			"response": []
 		},
 		{
-			"name": "Post request",
+			"name": "New Request",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -60,7 +60,30 @@
 			"response": []
 		},
 		{
-			"name": "Put request",
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/items/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"items",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -92,7 +115,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete request",
+			"name": "New Request",
 			"request": {
 				"method": "DELETE",
 				"header": [],
