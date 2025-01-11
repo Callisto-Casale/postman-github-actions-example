@@ -19,7 +19,7 @@ jobs:
         run: cargo run &
 
       - name: Wait for API to be ready
-        run: sleep 5
+        run: sleep 30
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
