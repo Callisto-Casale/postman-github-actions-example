@@ -60,14 +60,6 @@
 			"response": []
 		},
 		{
-			"name": "Get request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
 			"name": "Put request",
 			"request": {
 				"method": "PUT",
